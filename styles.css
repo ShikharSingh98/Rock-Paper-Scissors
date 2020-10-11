@@ -11,12 +11,13 @@ body {
 .heading {
   font-family: 'Fredoka One', cursive;
   font-size: 4.5rem;
-  color: #004e64;
+  text-align: center;
+  color: #1b4965;
 }
 
 .score-board {
   background-color: #e4fde1;
-  box-shadow: 0 0 10px #066892;
+  box-shadow: 0 0 10px #014563;
   color: #ff5e5b;
   display: flex;
   width: 350px;
@@ -75,4 +76,80 @@ body {
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
+  box-shadow: 0 0 10px #014563;
+}
+
+/* #show-message {
+  font-family: 'Open Sans', sans-serif;
+} */
+
+.instructions {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+.instructions span {
+  color: #ffb703;
+  font-size: 1.5rem;
+}
+
+@keyframes shakePlayer {
+  0% {
+    transform: rotate(90deg) translateX(0px);
+  }
+  15% {
+    transform: rotate(90deg) translateX(-50px);
+  }
+  25% {
+    transform: rotate(90deg) translateX(0px);
+  }
+  35% {
+    transform: rotate(90deg) translateX(-50px);
+  }
+  50% {
+    transform: rotate(90deg) translateX(0px);
+  }
+  65% {
+    transform: rotate(90deg) translateX(-50px);
+  }
+  75% {
+    transform: rotate(90deg) translateX(0px);
+  }
+  85% {
+    transform: rotate(90deg) translateX(-50px);
+  }
+  100% {
+    transform: rotate(90deg) translateX(0px);
+  }
+}
+
+@keyframes shakeComputer {
+  0% {
+    transform: scaleX(-1) rotate(90deg) translateX(0px);
+  }
+  15% {
+    transform: scaleX(-1) rotate(90deg) translateX(-50px);
+  }
+  25% {
+    transform: scaleX(-1) rotate(90deg) translateX(0px);
+  }
+  35% {
+    transform: scaleX(-1) rotate(90deg) translateX(-50px);
+  }
+  50% {
+    transform: scaleX(-1) rotate(90deg) translateX(0px);
+  }
+  65% {
+    transform: scaleX(-1) rotate(90deg) translateX(-50px);
+  }
+  75% {
+    transform: scaleX(-1) rotate(90deg) translateX(0px);
+  }
+  85% {
+    transform: scaleX(-1) rotate(90deg) translateX(-50px);
+  }
+  100% {
+    transform: scaleX(-1) rotate(90deg) translateX(0px);
+  }
 }
