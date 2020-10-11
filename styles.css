@@ -1,0 +1,58 @@
+body {
+  background-color: #f45b69;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heading {
+  font-family: 'Fredoka One', cursive;
+  font-size: 4.5rem;
+  color: #004e64;
+}
+
+.score-board {
+  background-color: #456990;
+  box-shadow: 0 0 10px #fc2f40;
+  color: #e4fde1;
+  display: flex;
+  width: 350px;
+  height: 100px;
+}
+
+.scores {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: 'Anton', sans-serif;
+}
+
+.scores :first-child {
+  font-size: 3rem;
+}
+
+.vs {
+  font-family: 'Anton', sans-serif;
+  font-size: 2rem;
+  margin-top: 0.6rem;
+  color: #0b3954;
+}
+
+.hands {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+  margin-top: 4rem;
+}
+
+.player-hand {
+  transform: rotate(90deg);
+}
+
+.computer-hand {
+  transform: scaleX(-1) rotate(90deg);
+}
