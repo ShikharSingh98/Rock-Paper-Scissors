@@ -1,5 +1,5 @@
 body {
-  background-color: #f45b69;
+  background-color: #247ba0;
 }
 
 .container {
@@ -15,9 +15,9 @@ body {
 }
 
 .score-board {
-  background-color: #456990;
-  box-shadow: 0 0 10px #fc2f40;
-  color: #e4fde1;
+  background-color: #e4fde1;
+  box-shadow: 0 0 10px #066892;
+  color: #ff5e5b;
   display: flex;
   width: 350px;
   height: 100px;
@@ -55,4 +55,24 @@ body {
 
 .computer-hand {
   transform: scaleX(-1) rotate(90deg);
+}
+
+.options {
+  display: flex;
+  justify-content: space-around;
+  width: 40%;
+  margin-top: 3rem;
+}
+
+.option {
+  text-transform: uppercase;
+  padding: 10px 32px;
+  outline: none;
+  border: none;
+  background-color: #70c1b3;
+  color: #114b5f;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.5rem;
 }
