@@ -49,11 +49,11 @@ body {
   margin-top: 4rem;
 }
 
-.player-hand {
+#player-hand {
   transform: rotate(90deg);
 }
 
-.computer-hand {
+#computer-hand {
   transform: scaleX(-1) rotate(90deg);
 }
 
