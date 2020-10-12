@@ -1,5 +1,6 @@
 body {
-  background-color: #247ba0;
+  /* background-color: #247ba0; */
+  background-color: #0b3954;
 }
 
 .container {
@@ -13,11 +14,12 @@ body {
   font-size: 4.5rem;
   text-align: center;
   color: #16425b;
+  color: #087e8b;
 }
 
 .score-board {
-  background-color: #e4fde1;
-  box-shadow: 0 0 10px #014563;
+  background-color: white;
+  box-shadow: 0 0 10px #00000052;
   color: #ff5e5b;
   display: flex;
   width: 350px;
@@ -50,8 +52,8 @@ body {
 .hands {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 35%;
-  margin-top: 4rem;
 }
 
 #player-hand {
@@ -60,6 +62,22 @@ body {
 
 #computer-hand {
   transform: scaleX(-1) rotate(90deg);
+}
+
+#countdown-text {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.5rem;
+  opacity: 0;
+  text-transform: uppercase;
+  color: #ffb703;
+  color: #bfd7ea;
+}
+
+@keyframes fadeIn {
+  100% {
+    opacity: 1;
+    transform: scale(2);
+  }
 }
 
 .options {
@@ -79,7 +97,7 @@ body {
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
-  box-shadow: 0 0 10px #014563;
+  /* box-shadow: 0 0 10px #014563; */
 }
 
 #show-results {
@@ -118,62 +136,10 @@ body {
   font-size: 1.5rem;
 }
 
-@keyframes shakePlayer {
-  0% {
-    transform: rotate(90deg) translateX(0px);
-  }
-  15% {
-    transform: rotate(90deg) translateX(-50px);
-  }
-  25% {
-    transform: rotate(90deg) translateX(0px);
-  }
-  35% {
-    transform: rotate(90deg) translateX(-50px);
-  }
-  50% {
-    transform: rotate(90deg) translateX(0px);
-  }
-  65% {
-    transform: rotate(90deg) translateX(-50px);
-  }
-  75% {
-    transform: rotate(90deg) translateX(0px);
-  }
-  85% {
-    transform: rotate(90deg) translateX(-50px);
-  }
-  100% {
-    transform: rotate(90deg) translateX(0px);
-  }
-}
-
-@keyframes shakeComputer {
-  0% {
-    transform: scaleX(-1) rotate(90deg) translateX(0px);
-  }
-  15% {
-    transform: scaleX(-1) rotate(90deg) translateX(-50px);
-  }
-  25% {
-    transform: scaleX(-1) rotate(90deg) translateX(0px);
-  }
-  35% {
-    transform: scaleX(-1) rotate(90deg) translateX(-50px);
-  }
-  50% {
-    transform: scaleX(-1) rotate(90deg) translateX(0px);
-  }
-  65% {
-    transform: scaleX(-1) rotate(90deg) translateX(-50px);
-  }
-  75% {
-    transform: scaleX(-1) rotate(90deg) translateX(0px);
-  }
-  85% {
-    transform: scaleX(-1) rotate(90deg) translateX(-50px);
-  }
-  100% {
-    transform: scaleX(-1) rotate(90deg) translateX(0px);
-  }
+#round-winner-text {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2rem;
+  margin: 2rem 0;
+  text-transform: uppercase;
+  color: white;
 }

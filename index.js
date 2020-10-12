@@ -8,11 +8,14 @@ const showResults = document.getElementById('show-results');
 const message = document.getElementById('message');
 const playAgain = document.getElementById('play-again');
 const controlPanel = document.getElementById('control-panel');
+const countdownText = document.getElementById('countdown-text');
+const roundWinnerText = document.getElementById('round-winner-text');
 
 let playerOption = '';
 let computerOption = '';
 let playerCount = 0;
 let computerCount = 0;
+let roundWinner = '';
 
 //sets computer option
 const setComputerOption = () => {
@@ -53,31 +56,38 @@ const setScores = () => {
 //Decides who is winner
 const decidingWinner = () => {
   if (playerOption === computerOption) {
+    roundWinner = "It's a tie";
     return;
   } else {
     if (playerOption === 'rock') {
       if (computerOption === 'paper') {
+        roundWinner = "Computer win's this round";
         computerCount++;
         setScores();
       } else {
+        roundWinner = "Player win's this round";
         playerCount++;
         setScores();
       }
     }
     if (playerOption === 'paper') {
       if (computerOption === 'scissors') {
+        roundWinner = "Computer win's this round";
         computerCount++;
         setScores();
       } else {
+        roundWinner = "Player win's this round";
         playerCount++;
         setScores();
       }
     }
     if (playerOption === 'scissors') {
       if (computerOption === 'rock') {
+        roundWinner = "Computer win's this round";
         computerCount++;
         setScores();
       } else {
+        roundWinner = "Player win's this round";
         playerCount++;
         setScores();
       }
@@ -85,32 +95,14 @@ const decidingWinner = () => {
   }
 };
 
-//Add Animation
-
-const addAnimation = () => {
-  playerHand.style.animation = 'shakePlayer 2s ease';
-  computerHand.style.animation = 'shakeComputer 2s ease';
-};
-
-//Remove animation
-const removeAnimation = () => {
-  playerHand.addEventListener('animationend', function () {
-    playerHand.style.animation = '';
-  });
-  computerHand.addEventListener('animationend', function () {
-    computerHand.style.animation = '';
-  });
-};
-
 const showMessage = () => {
-  console.log(playerCount, computerCount);
-  if (playerCount === 5) {
+  if (playerCount >= 5) {
     controlPanel.style.display = 'none';
     showResults.style.cssText =
       'display:flex;flex-direction:column;margin-top:2rem';
     message.textContent = 'Player Won 👑';
   }
-  if (computerCount === 5) {
+  if (computerCount >= 5) {
     controlPanel.style.display = 'none';
     showResults.style.cssText =
       'display:flex;flex-direction:column;margin-top:2rem';
@@ -118,12 +110,43 @@ const showMessage = () => {
   }
 };
 
+const addAnimation = () => {
+  countdownText.style.animation = 'fadeIn 0.5s';
+};
+
+const removeAnimation = () => {
+  countdownText.addEventListener('animationend', function () {
+    countdownText.style.animation = '';
+  });
+};
+
+let index = 0;
+let countdown = ['Rock', 'Paper', 'Scissors'];
+const showCountdown = () => {
+  if (index < countdown.length) {
+    countdownText.textContent = countdown[index];
+    addAnimation();
+    removeAnimation();
+    index++;
+    setTimeout(showCountdown, 1000);
+  } else {
+    index = 0;
+    countdownText.textContent = '';
+  }
+};
+
+//round winner
+
+const showRoundWinner = () => {};
+
 //Play Again
 
 playAgain.addEventListener('click', function () {
   //Reset Scores
   playerCount = 0;
   computerCount = 0;
+  //reset round winner
+  roundWinnerText.textContent = '';
   //Set reset scores on scoreboard
   setScores();
   controlPanel.style.display = 'block';
@@ -142,12 +165,11 @@ options.forEach((option) => {
     //resetting hands to rock
     playerHand.src = `https://img.icons8.com/color/96/000000/hand-rock.png`;
     computerHand.src = `https://img.icons8.com/color/96/000000/hand-rock.png`;
+    //reset round winner
+    roundWinnerText.textContent = '';
 
-    //First Add Animation
-    addAnimation();
-
-    //After completion remove the animation
-    removeAnimation();
+    //Show countdown
+    showCountdown();
 
     //For syncing with animation
     setTimeout(() => {
@@ -163,7 +185,8 @@ options.forEach((option) => {
       }
       setComputerHand();
       decidingWinner();
+      roundWinnerText.textContent = roundWinner; //show round winner
       showMessage();
-    }, 2000);
+    }, 3000);
   });
 });
