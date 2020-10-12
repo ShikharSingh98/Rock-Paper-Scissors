@@ -2,9 +2,12 @@ const playerHand = document.getElementById('player-hand');
 const computerHand = document.getElementById('computer-hand');
 const playerScore = document.getElementById('player-score');
 const computerScore = document.getElementById('computer-score');
-const hands = document.querySelectorAll('.hands img');
 const options = document.querySelectorAll('.option');
 const container = document.querySelector('.container');
+const showResults = document.getElementById('show-results');
+const message = document.getElementById('message');
+const playAgain = document.getElementById('play-again');
+const controlPanel = document.getElementById('control-panel');
 
 let playerOption = '';
 let computerOption = '';
@@ -91,18 +94,62 @@ const addAnimation = () => {
 
 //Remove animation
 const removeAnimation = () => {
-  hands.forEach((hand) => {
-    hand.addEventListener('animationend', function () {
-      this.style.animation = '';
-    });
+  playerHand.addEventListener('animationend', function () {
+    playerHand.style.animation = '';
+  });
+  computerHand.addEventListener('animationend', function () {
+    computerHand.style.animation = '';
   });
 };
+
+const showMessage = () => {
+  console.log(playerCount, computerCount);
+  if (playerCount === 5) {
+    controlPanel.style.display = 'none';
+    showResults.style.cssText =
+      'display:flex;flex-direction:column;margin-top:2rem';
+    message.textContent = 'Player Won 👑';
+  }
+  if (computerCount === 5) {
+    controlPanel.style.display = 'none';
+    showResults.style.cssText =
+      'display:flex;flex-direction:column;margin-top:2rem';
+    message.textContent = 'Computer Won 👑';
+  }
+};
+
+//Play Again
+
+playAgain.addEventListener('click', function () {
+  //Reset Scores
+  playerCount = 0;
+  computerCount = 0;
+  //Set reset scores on scoreboard
+  setScores();
+  controlPanel.style.display = 'block';
+
+  //resetting hands to rock
+  playerHand.src = `https://img.icons8.com/color/96/000000/hand-rock.png`;
+  computerHand.src = `https://img.icons8.com/color/96/000000/hand-rock.png`;
+
+  //Make show results not to display
+  showResults.style.cssText = 'display:none';
+});
 
 //Event Listeners for all options
 options.forEach((option) => {
   option.addEventListener('click', function () {
-    removeAnimation();
+    //resetting hands to rock
+    playerHand.src = `https://img.icons8.com/color/96/000000/hand-rock.png`;
+    computerHand.src = `https://img.icons8.com/color/96/000000/hand-rock.png`;
+
+    //First Add Animation
     addAnimation();
+
+    //After completion remove the animation
+    removeAnimation();
+
+    //For syncing with animation
     setTimeout(() => {
       setPlayerOption(this.textContent.toLowerCase());
       if (this.textContent.toLowerCase() === 'rock') {
@@ -116,6 +163,7 @@ options.forEach((option) => {
       }
       setComputerHand();
       decidingWinner();
+      showMessage();
     }, 2000);
   });
 });

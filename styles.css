@@ -12,7 +12,7 @@ body {
   font-family: 'Fredoka One', cursive;
   font-size: 4.5rem;
   text-align: center;
-  color: #1b4965;
+  color: #16425b;
 }
 
 .score-board {
@@ -43,10 +43,14 @@ body {
   color: #0b3954;
 }
 
+#control-panel {
+  width: 35%;
+}
+
 .hands {
   display: flex;
   justify-content: space-between;
-  width: 40%;
+  width: 35%;
   margin-top: 4rem;
 }
 
@@ -61,7 +65,6 @@ body {
 .options {
   display: flex;
   justify-content: space-around;
-  width: 40%;
   margin-top: 3rem;
 }
 
@@ -79,9 +82,30 @@ body {
   box-shadow: 0 0 10px #014563;
 }
 
-/* #show-message {
+#show-results {
+  display: none;
+}
+#message {
   font-family: 'Open Sans', sans-serif;
-} */
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  color: #70c1b3;
+}
+
+#play-again {
+  text-transform: uppercase;
+  padding: 10px 32px;
+  outline: none;
+  border: none;
+  background-color: #114b5f;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2rem;
+  box-shadow: 0 0 10px #014563;
+}
 
 .instructions {
   font-family: 'Open Sans', sans-serif;
