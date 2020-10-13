@@ -79,10 +79,10 @@ const decidingWinner = () => {
     }
     if (playerOption === 'scissors') {
       if (computerOption === 'rock') {
-        roundWinner = "Computer win's this round";
+        roundWinner = 'Computer wins this round';
         computerCount++;
       } else {
-        roundWinner = "Player win's this round";
+        roundWinner = 'Player wins this round';
         playerCount++;
       }
     }
