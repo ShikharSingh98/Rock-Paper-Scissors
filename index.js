@@ -63,49 +63,42 @@ const decidingWinner = () => {
       if (computerOption === 'paper') {
         roundWinner = "Computer win's this round";
         computerCount++;
-        setScores();
       } else {
         roundWinner = "Player win's this round";
         playerCount++;
-        setScores();
       }
     }
     if (playerOption === 'paper') {
       if (computerOption === 'scissors') {
         roundWinner = "Computer win's this round";
         computerCount++;
-        setScores();
       } else {
         roundWinner = "Player win's this round";
         playerCount++;
-        setScores();
       }
     }
     if (playerOption === 'scissors') {
       if (computerOption === 'rock') {
         roundWinner = "Computer win's this round";
         computerCount++;
-        setScores();
       } else {
         roundWinner = "Player win's this round";
         playerCount++;
-        setScores();
       }
     }
+    setScores();
   }
 };
 
 const showMessage = () => {
   if (playerCount >= 5) {
     controlPanel.style.display = 'none';
-    showResults.style.cssText =
-      'display:flex;flex-direction:column;margin-top:2rem';
+    showResults.style.cssText = 'display:flex;flex-direction:column;';
     message.textContent = 'Player Won 👑';
   }
   if (computerCount >= 5) {
     controlPanel.style.display = 'none';
-    showResults.style.cssText =
-      'display:flex;flex-direction:column;margin-top:2rem';
+    showResults.style.cssText = 'display:flex;flex-direction:column;';
     message.textContent = 'Computer Won 👑';
   }
 };

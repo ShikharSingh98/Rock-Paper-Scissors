@@ -1,5 +1,4 @@
 body {
-  /* background-color: #247ba0; */
   background-color: #0b3954;
 }
 
@@ -13,13 +12,12 @@ body {
   font-family: 'Fredoka One', cursive;
   font-size: 4.5rem;
   text-align: center;
-  color: #16425b;
   color: #087e8b;
 }
 
 .score-board {
   background-color: white;
-  box-shadow: 0 0 10px #00000052;
+  box-shadow: 0 0 20px #00000052;
   color: #ff5e5b;
   display: flex;
   width: 350px;
@@ -69,7 +67,6 @@ body {
   font-size: 1.5rem;
   opacity: 0;
   text-transform: uppercase;
-  color: #ffb703;
   color: #bfd7ea;
 }
 
@@ -97,11 +94,11 @@ body {
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.5rem;
-  /* box-shadow: 0 0 10px #014563; */
 }
 
 #show-results {
   display: none;
+  margin-top: 2rem;
 }
 #message {
   font-family: 'Open Sans', sans-serif;
@@ -116,13 +113,12 @@ body {
   padding: 10px 32px;
   outline: none;
   border: none;
-  background-color: #114b5f;
-  color: white;
+  background-color: #70c1b3;
+  color: #114b5f;
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2rem;
-  box-shadow: 0 0 10px #014563;
 }
 
 .instructions {
@@ -138,8 +134,76 @@ body {
 
 #round-winner-text {
   font-family: 'Open Sans', sans-serif;
-  font-size: 2rem;
-  margin: 2rem 0;
+  font-size: 1.5rem;
+  margin: 1.5rem 0;
   text-transform: uppercase;
   color: white;
+}
+
+@media (max-width: 690px) {
+  .heading {
+    font-size: 3rem;
+  }
+  .instructions {
+    font-size: 0.9rem;
+  }
+  .instructions span {
+    font-size: 1.2rem;
+  }
+  .score-board {
+    width: 300px;
+  }
+  .hands {
+    width: 100%;
+  }
+  #control-panel {
+    width: 100%;
+  }
+  .options {
+    margin-top: 2rem;
+  }
+  .option {
+    font-size: 1rem;
+    padding: 5px 16px;
+  }
+  #countdown-text {
+    font-size: 1rem;
+  }
+  #round-winner-text {
+    font-size: 1rem;
+    margin: 1rem 0;
+  }
+  #show-results {
+    margin-top: 1rem;
+  }
+  #message {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 1024px) {
+  .heading {
+    font-size: 3rem;
+  }
+  .hands {
+    width: 50%;
+  }
+  #control-panel {
+    width: 60%;
+  }
+  .options {
+    margin-top: 0.5rem;
+  }
+  .option {
+    font-size: 1.5rem;
+    padding: 10px 26px;
+  }
+  #show-results {
+    margin-top: 1rem;
+  }
+  #message {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
 }
