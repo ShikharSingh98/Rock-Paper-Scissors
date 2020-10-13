@@ -2,7 +2,7 @@
 
 Web application that let you play the famous childhood game.
 
-[Live Demo](https://rockpaperscissorsbyshikhar.netlify.app/) 
+[CLICK TO PLAY](https://rockpaperscissorsbyshikhar.netlify.app/) 
 
 ![PROJECT GIF](/demo.gif)
 
