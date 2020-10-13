@@ -61,19 +61,20 @@ const decidingWinner = () => {
   } else {
     if (playerOption === 'rock') {
       if (computerOption === 'paper') {
-        roundWinner = "Computer win's this round";
+        roundWinner = 'Computer wins this round';
         computerCount++;
       } else {
-        roundWinner = "Player win's this round";
+        roundWinner = 'Player wins this round';
         playerCount++;
       }
     }
     if (playerOption === 'paper') {
       if (computerOption === 'scissors') {
-        roundWinner = "Computer win's this round";
+        roundWinner = 'Computer wins this round';
         computerCount++;
       } else {
-        roundWinner = "Player win's this round";
+        roundWinner = 'Player wins this round';
+
         playerCount++;
       }
     }
