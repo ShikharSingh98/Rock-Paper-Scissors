@@ -139,6 +139,15 @@ body {
   text-transform: uppercase;
   color: white;
 }
+.footer {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  margin-top: 5rem;
+}
+.icons8Link {
+  color: #ff5e5b;
+  text-decoration: none;
+}
 
 @media (max-width: 690px) {
   .heading {
