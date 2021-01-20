@@ -181,6 +181,6 @@ options.forEach((option) => {
       decidingWinner();
       roundWinnerText.textContent = roundWinner; //show round winner
       showMessage();
-    }, 3000);
+    }, 2500);
   });
 });
